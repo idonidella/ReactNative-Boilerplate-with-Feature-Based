@@ -1,6 +1,6 @@
 {
   "name": "react-native-feature-based-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "React Native feature-based boilerplate (0.76.9) with android/ ios/ and app setup included",
   "keywords": [

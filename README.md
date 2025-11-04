@@ -1,6 +1,6 @@
-# react-native-feature-based-boilerplate
+## react-native-feature-based-boilerplate
 
-## Installation (RN 0.76.9 recommended)
+# Installation (RN 0.76.9 recommended)
 
 ```bash
 npx @react-native-community/cli@latest init MyApp \
@@ -32,11 +32,6 @@ npm run android
 - `npm run ios`: runs on iOS simulator
 - `npm run android`: runs on Android emulator
 
-## Folder Structure (template/)
-- `template/src/features`: Feature-based modules
-- `template/src/translations`: i18n language files (`en.json`, `tr.json`)
-- `template/src/theme`, `template/src/stores`, `template/src/services`: Theme, state, and services layers
-
 ## Environment Variables
 - `react-native-dotenv` is configured. Babel plugin is set up for `.env`.
 
@@ -45,10 +40,4 @@ npm run android
 - React: `18.3.1`
 - @react-native packages aligned with `0.76.9`
 
-## Publish (as NPM template)
-```bash
-npm login
-npm version patch
-npm publish --access public
-```
 

@@ -1,5 +1,3 @@
-## react-native-feature-based-boilerplate
-
 # Installation (RN 0.76.9 recommended)
 
 ```bash

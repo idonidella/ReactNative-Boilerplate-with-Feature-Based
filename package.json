@@ -1,6 +1,6 @@
 {
   "name": "react-native-feature-based-boilerplate",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "private": false,
   "description": "React Native feature-based boilerplate (0.76.9) with android/ ios/ and app setup included",
   "keywords": [
@@ -21,12 +21,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your/repo.git"
+    "url": "git+https://github.com/idonidella/ReactNative-Boilerplate-with-Feature-Based"
   },
-  "bugs": {
-    "url": "https://github.com/your/repo/issues"
-  },
-  "homepage": "https://github.com/your/repo#readme",
   "license": "MIT",
   "engines": {
     "node": ">=18"

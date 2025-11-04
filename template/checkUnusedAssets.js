@@ -2,38 +2,38 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-//Bu js dosyasının amacı:
-//1. src/assets dizinindeki tüm kullanılmayan dosyaları bulmaktır.
-//kullanmak için -> "node checkUnusedAssets.js"" komutunu terminalde çalıştırın.
+// Purpose of this JS file:
+// 1. Find all unused files under src/assets.
+// Usage -> run "node checkUnusedAssets.js" in the terminal.
 
 
-// assets dizininin doğru yolunu belirleyin
+// Set the correct path for the assets directory
 const assetsDir = path.join(__dirname, 'src/assets');
 const srcDir = path.join(__dirname, 'src');
 
-console.log('Assets dizini:', assetsDir);
-console.log('Kaynak dizini:', srcDir);
+console.log('Assets directory:', assetsDir);
+console.log('Source directory:', srcDir);
 
-// Assets klasörünün varlığını kontrol et
+// Check if the assets folder exists
 if (!fs.existsSync(assetsDir)) {
-  console.log('Hata: Assets dizini bulunamadı:', assetsDir);
+  console.log('Error: Assets directory not found:', assetsDir);
   process.exit(1);
 }
 
-// assets klasöründeki tüm dosyaları bul
+// Find all files in the assets folder
 const assetFiles = glob.sync(path.join(assetsDir, '**/*.*')).map(file => path.relative(__dirname, file));
 
 if (assetFiles.length === 0) {
-  console.log('Asset dosyaları bulunamadı. Klasör ve dosya izinlerini kontrol edin.');
-  console.log('Assets klasöründeki dosyalar:', fs.readdirSync(assetsDir, { withFileTypes: true }).map(dirent => dirent.name));
+  console.log('No asset files found. Check folder and file permissions.');
+  console.log('Files in assets folder:', fs.readdirSync(assetsDir, { withFileTypes: true }).map(dirent => dirent.name));
 } else {
-  console.log('Taranan asset dosyaları:', assetFiles);
+  console.log('Scanned asset files:', assetFiles);
 }
 
-// src klasöründeki tüm dosyaları bul
+// Find all files in the src folder
 const srcFiles = glob.sync(path.join(srcDir, '**/*.{js,jsx,ts,tsx}'));
 
-console.log('Taranan kaynak dosyaları:', srcFiles);
+console.log('Scanned source files:', srcFiles);
 
 const unusedAssets = [];
 
@@ -51,9 +51,9 @@ assetFiles.forEach(asset => {
   }
 });
 
-console.log('Kullanılmayan asset dosyaları:');
+console.log('Unused asset files:');
 if (unusedAssets.length === 0) {
-  console.log('Hepsi kullanılıyor.');
+  console.log('All assets are in use.');
 } else {
   unusedAssets.forEach(asset => console.log(asset));
 }

@@ -46,7 +46,7 @@ export const config = {
   isProduction: NODE_ENV === 'production',
 };
 
-// Development modunda environment değişkenlerini konsola yazdır
+// Log environment variables in development mode
 if (config.isDevelopment) {
   console.log('🔧 Environment Configuration:');
   console.log(`- Node Environment: ${config.nodeEnv}`);

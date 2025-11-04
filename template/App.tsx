@@ -148,6 +148,10 @@ const App = () => {
               <View style={styles.dot} />
               <Text style={styles.featureText}>{t('features.storage')}</Text>
             </View>
+            <View style={styles.feature}>
+              <View style={styles.dot} />
+              <Text style={styles.featureText}>{t('features.structure')}</Text>
+            </View>
           </View>
 
           <View style={styles.versionContainer}>

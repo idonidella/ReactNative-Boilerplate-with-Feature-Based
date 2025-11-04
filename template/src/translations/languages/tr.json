@@ -1,0 +1,13 @@
+{
+  "welcome": "React Native",
+  "boilerplate": "Boilerplate",
+  "craftedWith": "yapıldı",
+  "by": "tarafından",
+  "features": {
+    "typescript": "TypeScript Hazır",
+    "state": "Zustand State",
+    "i18n": "Çoklu Dil Desteği",
+    "storage": "MMKV Depolama"
+  }
+}
+

@@ -1,0 +1,13 @@
+{
+  "welcome": "React Native",
+  "boilerplate": "Boilerplate",
+  "craftedWith": "crafted with",
+  "by": "by",
+  "features": {
+    "typescript": "TypeScript Ready",
+    "state": "Zustand State",
+    "i18n": "i18n Support",
+    "storage": "MMKV Storage"
+  }
+}
+

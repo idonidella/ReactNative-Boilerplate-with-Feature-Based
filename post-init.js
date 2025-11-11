@@ -41,11 +41,21 @@ const fixCocoaPodsPermissions = async () => {
     try {
       console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}`);
       console.log(`${colors.bright}${colors.yellow}🔐 System Authentication Required${colors.reset}`);
-      console.log(`${colors.dim}Your password is needed to configure CocoaPods permissions${colors.reset}`);
+      console.log(`${colors.dim}Your password is needed to configure CocoaPods and Xcode compatibility${colors.reset}`);
       console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
+      
       execSync('sudo chown -R $(whoami) /opt/homebrew/lib/ruby/gems', { stdio: 'inherit' });
+      
+      console.log(`\n${colors.yellow}📦 Updating Xcodeproj compatibility...${colors.reset}`);
+      try {
+        execSync('sudo gem install xcodeproj --no-document', { stdio: 'pipe' });
+        console.log(`${colors.green}✓ Xcodeproj updated${colors.reset}`);
+      } catch (e) {
+        console.log(`${colors.dim}ℹ Xcodeproj can be updated manually later if needed${colors.reset}`);
+      }
+      
       console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}`);
-      console.log(`${colors.green}✓ CocoaPods configuration complete!${colors.reset}`);
+      console.log(`${colors.green}✓ CocoaPods and Xcode configuration complete!${colors.reset}`);
       console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
     } catch (error) {
       console.log(`${colors.dim}ℹ CocoaPods setup can be configured manually later${colors.reset}\n`);

@@ -45,13 +45,13 @@ const installPackages = async () => {
   console.log(`${colors.cyan}React Native Boilerplate Setup${colors.reset}`);
   console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
 
-  console.log(`${colors.bright}${colors.magenta}⚙ Kurulum Seçeneklerini Yapılandırın:${colors.reset}\n`);
+  console.log(`${colors.bright}${colors.magenta}⚙ Configure Setup Options:${colors.reset}\n`);
 
-  const navigation = await selectYesNo('📱 React Navigation');
-  const httpClient = await selectYesNo('🌐 Axios');
-  const animation = await selectYesNo('✨ React Native Reanimated');
+  const navigation = await selectYesNo('📱 Do you want to install React Navigation?');
+  const httpClient = await selectYesNo('🌐 Do you want to install Axios?');
+  const animation = await selectYesNo('✨ Do you want to install React Native Reanimated?');
 
-  console.log(`\n${colors.bright}${colors.yellow}⏳ Paketler yükleniyor...${colors.reset}\n`);
+  console.log(`\n${colors.bright}${colors.yellow}⏳ Installing packages...${colors.reset}\n`);
 
   const dependenciesToAdd = {};
 
@@ -83,10 +83,10 @@ const installPackages = async () => {
     execSync('npm install', { stdio: 'inherit', cwd: projectPath });
 
     console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}`);
-    console.log(`${colors.bright}${colors.green}✓ Kurulum Tamamlandı!${colors.reset}`);
+    console.log(`${colors.bright}${colors.green}✓ Setup Complete!${colors.reset}`);
     console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
 
-    console.log(`${colors.bright}${colors.magenta}📦 Yüklenen Paketler:${colors.reset}`);
+    console.log(`${colors.bright}${colors.magenta}📦 Installed Packages:${colors.reset}`);
     if (navigation) {
       console.log(`${colors.green}  ✓ React Navigation${colors.reset}`);
     }
@@ -97,20 +97,20 @@ const installPackages = async () => {
       console.log(`${colors.green}  ✓ React Native Reanimated${colors.reset}`);
     }
 
-    console.log(`\n${colors.bright}${colors.cyan}🚀 Başlamaya Hazırsınız!${colors.reset}`);
-    console.log(`${colors.dim}Aşağıdaki komutları çalıştırın:${colors.reset}\n`);
-    console.log(`${colors.bright}${colors.blue}npm start${colors.reset}       ${colors.dim}→ Geliştirme sunucusu başlatın${colors.reset}`);
-    console.log(`${colors.bright}${colors.blue}npm run ios${colors.reset}     ${colors.dim}→ iOS simülatöründe çalıştırın${colors.reset}`);
-    console.log(`${colors.bright}${colors.blue}npm run android${colors.reset} ${colors.dim}→ Android emülatöründe çalıştırın${colors.reset}`);
+    console.log(`\n${colors.bright}${colors.cyan}🚀 You're All Set!${colors.reset}`);
+    console.log(`${colors.dim}Run these commands to get started:${colors.reset}\n`);
+    console.log(`${colors.bright}${colors.blue}npm start${colors.reset}       ${colors.dim}→ Start the development server${colors.reset}`);
+    console.log(`${colors.bright}${colors.blue}npm run ios${colors.reset}     ${colors.dim}→ Run on iOS simulator${colors.reset}`);
+    console.log(`${colors.bright}${colors.blue}npm run android${colors.reset} ${colors.dim}→ Run on Android emulator${colors.reset}`);
     console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
   } catch (error) {
-    console.error(`${colors.red}${colors.bright}✗ Hata oluştu:${colors.reset} ${error.message}`);
+    console.error(`${colors.red}${colors.bright}✗ Error occurred:${colors.reset} ${error.message}`);
     process.exit(1);
   }
 };
 
 installPackages().catch((error) => {
-  console.error('Hata:', error);
+  console.error('Error:', error);
   process.exit(1);
 });
 

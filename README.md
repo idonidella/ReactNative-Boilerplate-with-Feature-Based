@@ -19,12 +19,12 @@ npx @react-native-community/cli@latest init MyApp \
 
 ## Interactive Setup Wizard 🧙
 
-Template'i indirdikten sonra, size sorulacak sorulara göre gereken kütüphaneleri otomatik olarak yükleyebilirsiniz:
+After downloading the template, you'll be asked interactive questions to automatically install the libraries you need:
 
-**Sorulacak Kütüphaneler (Evet/Hayır):**
-- 📱 **React Navigation** - Bottom Tabs, Native Stack ve diğer navigation özellikleri
-- 🌐 **Axios** - HTTP istekleri için
-- ✨ **React Native Reanimated** - Smooth animasyonlar
+**Available Libraries (Yes/No):**
+- 📱 **React Navigation** - Bottom Tabs, Native Stack, and other navigation features
+- 🌐 **Axios** - HTTP requests library
+- ✨ **React Native Reanimated** - Smooth animations
 
 ## Quick Start
 ```bash

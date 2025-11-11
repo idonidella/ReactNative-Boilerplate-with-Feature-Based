@@ -31,27 +31,20 @@ npm run android
 
 ## Troubleshooting
 
-### Xcodeproj Version Mismatch (Xcode 77+)
+### Xcodeproj Version Mismatch
 
 If you see: `Xcodeproj doesn't know about the following attributes` or `Xcode project version is higher than the latest supported`
 
-**Root Cause:** Your Xcode version is newer than the xcodeproj gem supports.
+This is a CocoaPods compatibility issue, not a project issue. Try:
 
-**Quick Fix:**
-```bash
-sudo gem install xcodeproj --no-document
-```
-
-Then try again:
 ```bash
 cd ios
 rm -rf Pods Podfile.lock build
+pod deintegrate
 pod install
 cd ..
 npm run ios
 ```
-
-**Note:** The setup wizard should have already updated xcodeproj for you during initialization.
 
 ### If pod install still fails:
 

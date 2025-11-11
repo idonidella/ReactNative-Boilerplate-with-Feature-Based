@@ -65,17 +65,6 @@ const installPackages = async () => {
   console.log(`${colors.cyan}React Native Boilerplate Setup${colors.reset}`);
   console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
 
-  const os = require('os');
-  if (os.platform() === 'darwin') {
-    console.log(`${colors.bright}${colors.yellow}🔧 Preparing Xcode compatibility...${colors.reset}`);
-    try {
-      execSync('sudo gem install xcodeproj --no-document', { stdio: 'pipe' });
-      console.log(`${colors.green}✓ Xcodeproj ready${colors.reset}\n`);
-    } catch (e) {
-      console.log(`${colors.dim}ℹ Xcodeproj preparation skipped${colors.reset}\n`);
-    }
-  }
-
   console.log(`${colors.bright}${colors.magenta}⚙ Configure Setup Options:${colors.reset}\n`);
 
   const navigation = await selectYesNo('📱 Do you want to install React Navigation?');

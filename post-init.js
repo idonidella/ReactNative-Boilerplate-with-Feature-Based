@@ -39,11 +39,16 @@ const fixCocoaPodsPermissions = async () => {
   const os = require('os');
   if (os.platform() === 'darwin') {
     try {
-      console.log(`\n${colors.yellow}🔧 Fixing CocoaPods permissions...${colors.reset}`);
+      console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}`);
+      console.log(`${colors.bright}${colors.yellow}🔐 System Authentication Required${colors.reset}`);
+      console.log(`${colors.dim}Your password is needed to configure CocoaPods permissions${colors.reset}`);
+      console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
       execSync('sudo chown -R $(whoami) /opt/homebrew/lib/ruby/gems', { stdio: 'inherit' });
-      console.log(`${colors.green}✓ CocoaPods permissions fixed!${colors.reset}\n`);
+      console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}`);
+      console.log(`${colors.green}✓ CocoaPods configuration complete!${colors.reset}`);
+      console.log(`${colors.cyan}${'─'.repeat(50)}${colors.reset}\n`);
     } catch (error) {
-      console.log(`${colors.dim}ℹ CocoaPods permissions fix skipped (may require manual setup)${colors.reset}\n`);
+      console.log(`${colors.dim}ℹ CocoaPods setup can be configured manually later${colors.reset}\n`);
     }
   }
 };

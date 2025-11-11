@@ -31,15 +31,35 @@ npm run android
 
 ## Troubleshooting
 
+### Xcodeproj Version Mismatch
+
+If you see: `Xcodeproj doesn't know about the following attributes`
+
+This is a CocoaPods compatibility issue, not a project issue. Try:
+
+```bash
+cd ios
+rm -rf Pods Podfile.lock build
+pod deintegrate
+pod install
+cd ..
+npm run ios
+```
+
 ### If pod install still fails:
 
-1. Clear CocoaPods cache:
+1. Update CocoaPods:
+```bash
+sudo gem install cocoapods
+```
+
+2. Clear CocoaPods cache:
 ```bash
 rm -rf ~/Library/Developer/Xcode/DerivedData/*
 pod cache clean --all
 ```
 
-2. Reinstall pods:
+3. Reinstall pods:
 ```bash
 cd ios
 rm -rf Pods Podfile.lock
@@ -47,7 +67,7 @@ pod install
 cd ..
 ```
 
-3. Rebuild the app:
+4. Rebuild the app:
 ```bash
 npm run ios
 ```

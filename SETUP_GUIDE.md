@@ -1,25 +1,18 @@
 # Setup Guide for React Native Boilerplate
 
-## If You Encounter CocoaPods Permission Errors
+## CocoaPods Permissions
 
-If you see errors like:
-```
-There was an error while trying to write to `/opt/homebrew/lib/ruby/gems/...`
-Bundler::PermissionError
-```
-
-### Solution:
-
-Run the following command to fix CocoaPods permissions:
+The setup script automatically fixes CocoaPods permissions during initialization. If you still encounter permission errors, run:
 
 ```bash
 sudo chown -R $(whoami) /opt/homebrew/lib/ruby/gems
 ```
 
-Then run `pod install` again:
+Then reinstall pods:
 
 ```bash
 cd ios
+rm -rf Pods Podfile.lock
 pod install
 cd ..
 ```

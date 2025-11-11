@@ -35,6 +35,19 @@ const selectYesNo = async (title) => {
   return answer === 'y' || answer === 'yes';
 };
 
+const fixCocoaPodsPermissions = async () => {
+  const os = require('os');
+  if (os.platform() === 'darwin') {
+    try {
+      console.log(`\n${colors.yellow}🔧 Fixing CocoaPods permissions...${colors.reset}`);
+      execSync('sudo chown -R $(whoami) /opt/homebrew/lib/ruby/gems', { stdio: 'inherit' });
+      console.log(`${colors.green}✓ CocoaPods permissions fixed!${colors.reset}\n`);
+    } catch (error) {
+      console.log(`${colors.dim}ℹ CocoaPods permissions fix skipped (may require manual setup)${colors.reset}\n`);
+    }
+  }
+};
+
 const installPackages = async () => {
   const projectPath = process.cwd();
   const packageJsonPath = path.join(projectPath, 'package.json');
@@ -81,6 +94,8 @@ const installPackages = async () => {
 
   try {
     execSync('npm install', { stdio: 'inherit', cwd: projectPath });
+
+    await fixCocoaPodsPermissions();
 
     console.log(`\n${colors.cyan}${'─'.repeat(50)}${colors.reset}`);
     console.log(`${colors.bright}${colors.green}✓ Setup Complete!${colors.reset}`);

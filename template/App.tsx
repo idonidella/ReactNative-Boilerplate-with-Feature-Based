@@ -164,7 +164,7 @@ const App = () => {
           <View style={styles.heart}>
             <Text style={styles.heartIcon}>♥</Text>
           </View>
-          <Text style={styles.author}>{t('by')} idonidella</Text>
+          <Text style={styles.author}>{t('by')} Sirius AI Tech</Text>
         </View>
       </Animated.View>
     </SafeAreaView>

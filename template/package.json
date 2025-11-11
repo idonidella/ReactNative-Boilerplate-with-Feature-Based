@@ -7,7 +7,8 @@
     "ios": "react-native run-ios --simulator='iPhone 15'",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "setup": "node ../post-init.js"
   },
   "dependencies": {
     "i18next": "^25.6.0",

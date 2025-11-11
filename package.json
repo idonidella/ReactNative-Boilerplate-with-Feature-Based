@@ -1,6 +1,6 @@
 {
   "name": "react-native-feature-based-boilerplate",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "private": false,
   "description": "React Native feature-based boilerplate (0.76.9) with android/ ios/ and app setup included",
   "keywords": [
@@ -18,7 +18,8 @@
     "template",
     "template.config.js",
     "post-init.js",
-    "README.md"
+    "README.md",
+    "SETUP_GUIDE.md"
   ],
   "repository": {
     "type": "git",

@@ -49,7 +49,7 @@ const installPackages = async () => {
 
   const navigation = await selectYesNo('📱 Do you want to install React Navigation?');
   const httpClient = await selectYesNo('🌐 Do you want to install Axios?');
-  const animation = await selectYesNo('✨ Do you want to install React Native Reanimated?');
+  const animation = await selectYesNo('✨ Do you want to install React Native Linear Gradient?');
 
   console.log(`\n${colors.bright}${colors.yellow}⏳ Installing packages...${colors.reset}\n`);
 
@@ -69,7 +69,7 @@ const installPackages = async () => {
   }
 
   if (animation) {
-    dependenciesToAdd['react-native-reanimated'] = '^3.8.1';
+    dependenciesToAdd['react-native-linear-gradient'] = '^2.8.3';
   }
 
   packageJson.dependencies = {
@@ -94,7 +94,7 @@ const installPackages = async () => {
       console.log(`${colors.green}  ✓ Axios${colors.reset}`);
     }
     if (animation) {
-      console.log(`${colors.green}  ✓ React Native Reanimated${colors.reset}`);
+      console.log(`${colors.green}  ✓ React Native Linear Gradient${colors.reset}`);
     }
 
     console.log(`\n${colors.bright}${colors.cyan}🚀 You're All Set!${colors.reset}`);

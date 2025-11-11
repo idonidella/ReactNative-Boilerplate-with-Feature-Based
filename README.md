@@ -24,7 +24,7 @@ After downloading the template, you'll be asked interactive questions to automat
 **Available Libraries (Yes/No):**
 - 📱 **React Navigation** - Bottom Tabs, Native Stack, and other navigation features
 - 🌐 **Axios** - HTTP requests library
-- ✨ **React Native Reanimated** - Smooth animations
+- ✨ **React Native Linear Gradient** - Beautiful gradient backgrounds
 
 ## Quick Start
 ```bash
